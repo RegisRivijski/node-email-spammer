@@ -38,7 +38,7 @@ async function main() {
       .catch((e) => {
         console.error(e.message);
       });
-    console.log(`${index}/${len}\t${email}\t${res?.response}`);
+    console.log(`${index}/${len}\t${res?.response}`);
     index += 1;
   }
   console.log('Done!');
