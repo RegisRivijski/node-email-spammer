@@ -2,6 +2,11 @@ const nodemailer = require('nodemailer');
 const config = require('config');
 const fs = require('fs');
 
+const transporter = nodemailer.createTransport({
+  service: config.gmail.service,
+  auth: config.gmail.auth,
+});
+
 const html = fs.readFileSync('./app/index.html', 'utf-8');
 const emails = fs.readFileSync(
   config.emailTargets.path,
@@ -9,10 +14,6 @@ const emails = fs.readFileSync(
 ).split('\r\n');
 
 async function main() {
-  const transporter = nodemailer.createTransport({
-    service: config.gmail.service,
-    auth: config.gmail.auth,
-  });
   const len = emails.length;
   const startFrom = 0;
   let index = 1;
