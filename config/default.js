@@ -8,6 +8,6 @@ module.exports = {
     },
   },
   emailTargets: {
-    path: '/mnt/d/Data/Criminal/email.txt',
+    path: '',
   },
 };
