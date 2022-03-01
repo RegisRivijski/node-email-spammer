@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const config = require('config');
 const fs = require('fs');
+const arrayHelper = require('./helpers/arrayHelper');
 
 const transporter = nodemailer.createTransport({
   service: config.gmail.service,
@@ -8,10 +9,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const html = fs.readFileSync('./app/index.html', 'utf-8');
-const emails = fs.readFileSync(
-  config.emailTargets.path,
-  'utf-8'
-).split('\r\n');
+const emails = arrayHelper.makeChunks(2000, fs.readFileSync(config.emailTargets.path, 'utf-8').split('\r\n'));
 
 async function main() {
   const len = emails.length;
