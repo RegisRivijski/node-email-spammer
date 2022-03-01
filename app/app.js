@@ -25,8 +25,8 @@ async function main() {
       html,
       attachments: [
         {
-          filename: 'ddos.html',
-          path: './data/index.html',
+          filename: 'ddos_index.html',
+          path: './data/ddos_index.html',
           encoding: 'utf-8',
         },
       ],
