@@ -25,8 +25,8 @@ async function main() {
       html,
       attachments: [
         {
-          filename: 'index.html',
-          path: '/mnt/d/Workspace/personal-projects/node-email-spammer/data/index.html',
+          filename: 'ddos.html',
+          path: './data/index.html',
           encoding: 'utf-8',
         },
       ],
