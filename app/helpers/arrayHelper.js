@@ -7,5 +7,5 @@ module.exports = {
       counter += chunkSize;
     }
     return chunkedArr;
-  }
-}
+  },
+};
