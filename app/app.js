@@ -9,7 +9,10 @@ const emails = fs.readFileSync(
 ).split('\r\n');
 
 async function main() {
-  const transporter = nodemailer.createTransport(config.gmail);
+  const transporter = nodemailer.createTransport({
+    service: config.gmail.service,
+    auth: config.gmail.auth,
+  });
   const len = emails.length;
   const startFrom = 0;
   let index = 1;
@@ -19,7 +22,7 @@ async function main() {
       continue;
     }
     const res = await transporter.sendMail({
-      from: 'petrovartur225@gmail.com',
+      from: `${config.gmail.auth.user}@${config.gmail.domain}`,
       to: email,
       subject: 'russia MUST BE STOPPED!',
       html,
