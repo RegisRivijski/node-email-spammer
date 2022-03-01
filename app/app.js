@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const html = fs.readFileSync('./app/index.html', 'utf-8');
 const emails = fs.readFileSync(
-  '/mnt/d/Data/Criminal/email.txt',
+  config.emailTargets.path,
   'utf-8'
 ).split('\r\n');
 

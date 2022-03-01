@@ -6,4 +6,7 @@ module.exports = {
       pass: '',
     },
   },
+  emailTargets: {
+    path: '/mnt/d/Data/Criminal/email.txt',
+  },
 };
