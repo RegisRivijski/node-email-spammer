@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const html = fs.readFileSync('./app/index.html', 'utf-8');
-const emails = arrayHelper.makeChunks(2000, fs.readFileSync(config.emailTargets.path, 'utf-8').split('\r\n'));
+const emails = arrayHelper.makeChunks(400, fs.readFileSync(config.emailTargets.path, 'utf-8').split('\r\n'));
 
 async function main() {
   const len = emails.length;
